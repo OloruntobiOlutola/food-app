@@ -4,10 +4,12 @@ import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Featured from "../components/Featured";
 import PizzaList from "../components/PizzaList";
+import axios from "axios";
+import envFile from "../constants/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ products }: any) {
   return (
     <>
       <Head>
@@ -17,7 +19,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured />
-      <PizzaList />
+      <PizzaList products={products} />
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const url = `${envFile.URL}/products`;
+  const { data } = await axios.get(url);
+  return {
+    props: {
+      products: data.products,
+    },
+  };
+};

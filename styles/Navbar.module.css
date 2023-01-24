@@ -33,11 +33,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .texts {
   margin-left: 20px;
   color: white;
+  cursor: pointer;
 }
 
 .text:first-child {
@@ -62,10 +64,12 @@
 
 .listItem {
   font-weight: 500;
+  cursor: pointer;
 }
 
 .cart {
   position: relative;
+  cursor: pointer;
 }
 
 .counter {
@@ -85,4 +89,13 @@
   width: 10px;
   font-weight: bold;
   color: #d1411e;
+}
+
+@media screen and (max-width: 480px) {
+  .item:nth-child(2) {
+    display: none;
+  }
+  .item:nth-child(1) {
+    flex: 3;
+  }
 }

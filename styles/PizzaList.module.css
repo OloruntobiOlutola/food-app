@@ -18,3 +18,13 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 480px) {
+  .title {
+    text-align: center;
+  }
+  .description {
+    width: 98%;
+    text-align: center;
+  }
+}

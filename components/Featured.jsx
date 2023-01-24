@@ -5,8 +5,8 @@ import styles from "../styles/Featured.module.css";
 const Featured = () => {
   const [count, setCount] = useState(0);
   const images = [
-    "/img/featured2.png",
     "/img/featured.png",
+    "/img/featured2.png",
     "/img/featured3.png",
   ];
 
@@ -29,7 +29,7 @@ const Featured = () => {
       </div>
       <div
         className={styles.wrapper}
-        style={{ transform: `translateX(${-100 * count}vw)` }}
+        style={{ transform: `translateX(${-100 * (count - 1)}vw)` }}
       >
         {images.map((img, count) => (
           <div className={styles.imageContainer} key={count}>
